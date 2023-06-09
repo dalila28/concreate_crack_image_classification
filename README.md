@@ -48,3 +48,38 @@
 ### 3. Results
 
 
+1. The architecture used in this model is MobileNetV2 which is designed for efficient image clasification to achieve high accuracy on image classification tasks. Implementation of dropout layer in this architecture is to prevent overfitting, which cause model to perform well on the training data but fails to generalize well to new data.
+
+![model_architecture](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/architecture.png)
+
+                                                           Model Architecture
+
+
+2. Model performance
+
+
+  * Figure 1 showing snapshot of model performance for training under 10 epochs 
+
+
+![model_performance1](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/model_training_performance1.png)
+  
+                                                                Figure 1
+
+
+   * Figure 2 showing snapshot of model performance for continuation of training under 10 fine tune epochs. As you can see from the figure 2 the epochs training is stopped at 18/20 not 20/20 this happen because I applied early stopping during training. "**code line of early stopping: (early_stopping = callbacks.EarlyStopping(monitor='val_loss', patience=3)**". EarlyStopping callback can detect if the model's performance is not improving on new data. If the validation loss does not improve for a certain number of epochs (patience=3), it can be an indication that the model is no longer learning meaningful patterns and further training may not be beneficial. Therefore, training can be stopped early to avoid overfitting.
+
+
+![model_performance2](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/model_finetune_p1.png)
+
+                                                                Figure 2
+
+3. Tensorboard snapshot showing graph of MSE
+
+![tensorboard]
+
+
+4. Figure below showing the matplotlib graph comparison between actual & predicted result of covid-19 case in Malaysia based on my deep learning project. From the graph we can see that the predicted line is following the curve of actual line which as for my observation I can say that the result is good eventhough it not following correctly the spike of curve. If we want to improve the result, I think we can increase number of epochs so model has more opportunities to learn from the data and adjust its parameters to improve performance.
+![actual_vs_predicted](https://github.com/dalila28/covid19-case-prediction/blob/main/images/actual_vs_predicted.png)
+
+
+
