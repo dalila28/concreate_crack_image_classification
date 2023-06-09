@@ -3,11 +3,9 @@
 
 ### 1. Project Description
   * Cracking concrete problem can cause life threatening to people. In order to overcome this problem, a concrete crack image classifiication is developed to identify the concretes with or without crack.
-  * In the development of this project, running the 
+  * The development of concrete crack image classification is by using the transfer learning where I set the pretrained feature extractor as non-trainable (freezing) & second time I unfreeze some layers in the feature extractor so that they will receive parameter update.
       
       
-    
-
 ### 2. Software used, framework,how to run project
    * Software needed:
      * Visual Studio Code as my IDE. You can get here https://code.visualstudio.com/download
@@ -18,6 +16,7 @@
    
    * How to run project:
      * Download project in the github
+     * Download dataset from  link i insert in credits section below.
      * In Visual Studio Code make sure install Python
      * Open Anaconda prompt : "(OPTIONAL) IS FOR GPU INSTALLATION IF YOU NEED FOR CPU THEN IGNORE OPTIONAL"
         * (base) conda create -n "name u want to have" python=3.8
@@ -39,8 +38,11 @@
       * Test your installation (RESTART TERMINAL BEFORE TESTING)  
          * Inside C:\Users\< USERNAME > \Anaconda3\envs\tensorflow\TensorFlow\models\research
          * python object_detection/builders/model_builder_tf2_test.py The terminal should show OK if it passes all the tests
-    * Open Visual Studio Code, 
-         * Go to open new folder, open downloaded file that you download from my repository, then you can run concrete_crack.py file
+      * Open Visual Studio Code, 
+         * Go to open new folder, open downloaded file that you download from my repository
+         * Make sure downloaded dataset and the concrete_crack.py file in same folder
+         * Then you can run concrete_crack.py file
+         * Troubleshoot: let say you have problem loading the dataset, please check your folder directory carefully.
         
 
  
@@ -58,7 +60,7 @@
 2. Model performance
 
 
-  * Figure 1 showing snapshot of model performance for training under 10 epochs 
+  * Figure 1 showing snapshot of model performance for training under 10 epochs with implementation of early stopping.
 
 
 ![model_performance1](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/model_training_performance1.png)
@@ -73,13 +75,35 @@
 
                                                                 Figure 2
 
-3. Tensorboard snapshot showing graph of MSE
 
-![tensorboard]
-
-
-4. Figure below showing the matplotlib graph comparison between actual & predicted result of covid-19 case in Malaysia based on my deep learning project. From the graph we can see that the predicted line is following the curve of actual line which as for my observation I can say that the result is good eventhough it not following correctly the spike of curve. If we want to improve the result, I think we can increase number of epochs so model has more opportunities to learn from the data and adjust its parameters to improve performance.
-![actual_vs_predicted](https://github.com/dalila28/covid19-case-prediction/blob/main/images/actual_vs_predicted.png)
+  *   In short, application of early stopping callbacks in the model training can avoid our model to be overfitted.
+  
+  
+3. Tensorboard showing the epoch accuracy of training and validation is 99% of accuracy. 
 
 
+
+
+![tensorboard](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/tensorboard.png)
+
+                                                               Tensorboard
+
+
+4. In conclusion, application of transfer learning and early stopping help model to achieve such very high accuracy 99% & not being overfit model.
+
+
+
+5. Image augmentation is performed to ensure that model can identify the crack from various angle.
+
+
+
+![image](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/data_augmentation.png)
+
+                                                              Image Augmentation
+
+
+### 4. Credits
+1. The dataset for concrete crack image classificarion is from https://data.mendeley.com/datasets/5y9wdsg2zt/2 Özgenel, Çağlar Fırat (2019), “Concrete Crack Images for Classification”, Mendeley Data, V2, doi: 10.17632/5y9wdsg2zt.2
+2. I followed the TensorBoard tutorial provided by TensorFlow, available at https://www.tensorflow.org/tensorboard/get_started, to create visualizations for monitoring and analyzing models.
+3. To ensure efficiency in my project, I consistently relied on the comprehensive TensorFlow API documentation at https://www.tensorflow.org/api_docs/python/tf/all_symbols. This documentation served as my go-to resource for exploring the various functions, classes, and modules provided by TensorFlow, enabling me to effectively utilize the powerful TensorFlow framework in my project.
 
