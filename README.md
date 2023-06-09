@@ -66,14 +66,14 @@
 
 ![model_performance1](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/model_training_performance1.png)
   
-                                                                Figure 1
+                                                        Figure 1
 
 
    * Figure 2 showing snapshot of model performance for continuation of training under 10 fine tune epochs. As you can see from the figure 2 the epochs training is stopped at 18/20 not 20/20 this happen because I applied early stopping during training. "**code line of early stopping: (early_stopping = callbacks.EarlyStopping(monitor='val_loss', patience=3)**". EarlyStopping callback can detect if the model's performance is not improving on new data. If the validation loss does not improve for a certain number of epochs (patience=3) **as you can see for epoch 16 and epoch 18 have similar value of validation loss**, it can be an indication that the model is no longer learning meaningful patterns and further training may not be beneficial. Therefore, training will stop early to avoid overfitting. Training and validation achieved 99% of accuracy and we can say that the model perform optimally as the difference value of training loss and validation loss is not too far.
 
 ![model_performance2](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/model_finetune_p1.png)
 
-                                                                Figure 2
+                                                       Figure 2
 
 
   *   In short, application of early stopping callbacks in the model training can avoid our model to be overfitted.
@@ -86,7 +86,7 @@
 
 ![tensorboard](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/tensorboard.png)
 
-                                                               Tensorboard
+                                                      Tensorboard
 
 
 4. In conclusion, application of transfer learning and early stopping help model to achieve such very high accuracy 99% & not being overfit model.
@@ -102,7 +102,7 @@ Image augmentation is performed to ensure that model can identify the crack from
 
 ![image](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/img_augmentation.png)
 
-                                                              Image Augmentation
+                                                       Image Augmentation
 
 
 ### 5. Credits
