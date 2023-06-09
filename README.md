@@ -100,7 +100,7 @@ Image augmentation is performed to ensure that model can identify the crack from
 
 
 
-![image](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/data_augmentation.png)
+![image](https://github.com/dalila28/concreate_crack_image_classification/blob/main/images/img_augmentation.png)
 
                                                               Image Augmentation
 
