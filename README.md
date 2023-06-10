@@ -3,7 +3,7 @@
 
 ### 1. Project Description
   * Cracking concrete problem can cause life threatening to people. In order to overcome this problem, a concrete crack image classifiication is developed to identify the concretes with or without crack.
-  * The development of concrete crack image classification project here is by using the transfer learning technique. Transfer learning is a technique where a pre-trained neural network model is used as a starting point for a new task instead of training a model from scratch. For my project, at first I set the pretrained feature extractor as non-trainable (freezing) & second time I unfreeze some layers in the feature extractor so that they will receive parameter update.
+  * The development of concrete crack image classification project here is by using the transfer learning technique. Transfer learning is a technique where a pre-trained neural network model is used as a starting point for a new task instead of training a model from scratch. For my project, at first I set the pretrained feature extractor as non-trainable (freezing) to prevent the weights from being updated during training. Then during fine tuning training process I unfreeze some layers at the top in the feature extractor so that they will receive parameter update.The reason why only top layers are being unfreeze is because few top layers only learn simple and generic features.
       
       
 ### 2. Software used, framework,how to run project
